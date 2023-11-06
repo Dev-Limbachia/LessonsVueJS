@@ -4,7 +4,7 @@ let defaultSubjects = [
     "title": "Math",
     "location": "London",
     "price": 500,
-    "image": "image/math_icon.png",
+    "image": "./image/math_icon.png",
     "availableInventory": 5
   },
   
