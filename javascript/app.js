@@ -19,9 +19,9 @@ new Vue({
     isCheckoutEnabled: false, // Validation for checkout
   },
   methods: {
-    addToCart: function (subject, index) {
+    addToCart: function (subject) {
       let itemIndex = this.cart.findIndex((ct) => ct.id === subject.id);
-      if (itemIndex == -1) {
+      if (itemIndex === -1) {
         this.cart.push({
           ...subject,
           quantity: 1,
@@ -29,8 +29,14 @@ new Vue({
       } else {
         this.cart[itemIndex].quantity++;
       }
-      this.subjects[index].availableInventory--;
+    
+      // Find the subject in the subjects array (not filteredSubjects) and update its availability
+      const subjectIndex = this.subjects.findIndex((s) => s.id === subject.id);
+      if (subjectIndex !== -1) {
+        this.subjects[subjectIndex].availableInventory--;
+      }
     },
+    
 
     // Function to handle sorting based on the selected category and order
     sortSubject: function () {
