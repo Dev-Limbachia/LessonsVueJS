@@ -259,12 +259,13 @@ h1 {
   font-size: 25px;
 }
 
-/* Style for the checkout container */
+/* Style for the checkout section */
 .checkout-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
+  width: 30%;
 }
 
 /* Style for the checkout box */
@@ -316,14 +317,6 @@ hr {
   height: 1px;
   border-width: 0;
   background-color: #007bff;
-}
-
-/* Checkout section */
-.checkout-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30%;
 }
 
 .checkout-box {
