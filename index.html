@@ -51,19 +51,19 @@
           <!-- Sort by category section -->
           <div class="column category">
             <label>
-              <input type="radio" v-model="sortCategory" value="Title" @change="sortSubject" />
+              <input type="radio" v-model="sortCategory" id="titlesort" value="Title" @change="sortSubject" />
               Title
             </label>
             <label>
-              <input type="radio" v-model="sortCategory" value="Location" @change="sortSubject" />
+              <input type="radio" v-model="sortCategory" id="locationsort" value="Location" @change="sortSubject" />
               Location
             </label>
             <label>
-              <input type="radio" v-model="sortCategory" value="Availability" @change="sortSubject" />
+              <input type="radio" v-model="sortCategory" id="availabilitysort" value="Availability" @change="sortSubject" />
               Availability
             </label>
             <label>
-              <input type="radio" v-model="sortCategory" value="Price" @change="sortSubject" />
+              <input type="radio" v-model="sortCategory" id="pricesort" value="Price" @change="sortSubject" />
               Price
             </label>
           </div>
@@ -71,11 +71,11 @@
           <!-- Sort by order section -->
           <div class="column order">
             <label>
-              <input type="radio" v-model="sortOrder" value="ascending" @change="sortSubject" />
+              <input type="radio" v-model="sortOrder" id="ascending_order" value="ascending" @change="sortSubject" />
               Ascending
             </label>
             <label>
-              <input type="radio" v-model="sortOrder" value="descending" @change="sortSubject" />
+              <input type="radio" v-model="sortOrder" id="descending_order" value="descending" @change="sortSubject" />
               Descending
             </label>
             <button class="button" @click="resetShowProduct">Relevance</button>
