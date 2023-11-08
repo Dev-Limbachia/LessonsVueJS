@@ -2,8 +2,8 @@ new Vue({
   el: "#app",
   data: {
     sitename: "After School Club",
-    showProduct: true,
-    subjects: [...defaultSubjects],
+    showProduct: true, // default
+    subjects: [...defaultSubjects], // JSON data stored in an array
     cart: [], // array to store items in shopping cart
     sortPrice: "Price", // Default sorting type - price
     sortTitle: "Title", // Default sorting type - title
@@ -19,6 +19,7 @@ new Vue({
     isCheckoutEnabled: false, // Validation for checkout
   },
   methods: {
+    // method to add subjects to cart
     addToCart: function (subject) {
       let itemIndex = this.cart.findIndex((ct) => ct.id === subject.id);
       if (itemIndex === -1) {
@@ -29,14 +30,13 @@ new Vue({
       } else {
         this.cart[itemIndex].quantity++;
       }
-    
-      // Find the subject in the subjects array (not filteredSubjects) and update its availability
+
+      // Finds the subject in the subjects array (not filteredSubjects) and update its availability
       const subjectIndex = this.subjects.findIndex((s) => s.id === subject.id);
       if (subjectIndex !== -1) {
         this.subjects[subjectIndex].availableInventory--;
       }
     },
-    
 
     // Function to handle sorting based on the selected category and order
     sortSubject: function () {
@@ -81,6 +81,7 @@ new Vue({
       }
     },
 
+    // Method to show Cart page 
     showCart() {
       if (this.cartItemCount == 0) {
         this.showProduct = true;
@@ -89,6 +90,7 @@ new Vue({
       }
     },
 
+    // Resets the sort filter to default (Relevance button)
     resetShowProduct() {
       // Reset the subjects to the default order when "Availability" is selected
       this.subjects = [...defaultSubjects];
@@ -96,6 +98,7 @@ new Vue({
       this.sortOrder = null;
     },
 
+    // Remove Cart items
     removeCartItem: function (item) {
       if (item.quantity > 1) {
         item.quantity--;
@@ -113,9 +116,9 @@ new Vue({
       }
     },
 
-  // Function to handle the checkout process
-  checkout() {
-    if (this.isCheckoutEnabled) {
+    // Function to handle the checkout process
+    checkout() {
+      if (this.isCheckoutEnabled) {
         // Display an alert message
         alert("The order is submitted.");
 
@@ -127,11 +130,13 @@ new Vue({
 
         // Reload the page
         location.reload();
-    }
-},
+      }
+    },
   },
 
   computed: {
+
+    // Counter for cart item
     cartItemCount: function () {
       let totalCount = 0;
 
@@ -142,6 +147,7 @@ new Vue({
       return totalCount || "";
     },
 
+    // Function to disable Cart button if no item is added to the cart
     canAddToCart: function () {
       return function (subject) {
         return subject.availableInventory > 0;
@@ -164,16 +170,20 @@ new Vue({
       });
     },
 
-        //Function to check checkout validation
-        checkInputs() {
-          // const namePattern = /^[a-zA-Z]+$/;
-          const namePattern = /^[a-zA-Z\s]+$/;
-          const phonePattern = /^[0-9]+$/;
-          const isNameValid = namePattern.test(this.name);
-          const isPhoneValid = phonePattern.test(this.phone) && this.phone.length >= 7;
-          // Check if the cart is not empty
-          this.isCartNotEmpty = this.cart.length > 0;
-          this.isCheckoutEnabled = isNameValid && isPhoneValid && this.isCartNotEmpty;
-      },
+    //Function for checkout validation
+    checkInputs() {
+      // const namePattern = /^[a-zA-Z]+$/;
+      const namePattern = /^[a-zA-Z\s]+$/;
+      const phonePattern = /^[0-9]+$/;
+      const isNameValid = namePattern.test(this.name);
+      const isPhoneValid =
+        phonePattern.test(this.phone) &&
+        this.phone.length >= 7 &&
+        this.phone.length <= 15;
+      // Check if the cart is not empty
+      this.isCartNotEmpty = this.cart.length > 0;
+      this.isCheckoutEnabled =
+        isNameValid && isPhoneValid && this.isCartNotEmpty;
+    },
   },
 });

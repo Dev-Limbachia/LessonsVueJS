@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Scripts -->
 <link rel="stylesheet" href="./css/style.css" />
-<script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>
+<script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script> <!-- Vue JS version 2.7.8 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-<script src="lesson.js"></script>
+<script src="lesson.js"></script> <!-- Script to load JSON data -->
 
 <head>
   <meta charset="UTF-8" />
@@ -13,7 +15,11 @@
 </head>
 
 <body>
+
+  <!-- Connects Vue JS Framework-->
   <div id="app">
+
+    <!-- Header Section -->
     <header>
       <div class="container1">
         <div class="sub-container1">
@@ -27,15 +33,22 @@
       </div>
     </header>
 
+    <!-- Main Section -->
     <main>
+      <!-- Search and Sort section -->
       <div class="search-sort-container" v-if="showProduct">
+
+        <!-- Search section -->
         <div class="search">
           <input class="search-input" type="text" id="searchInput" v-model="searchText" />
           <i class="fa fa-search" aria-hidden="true"></i>
         </div>
 
+        <!-- Sort section -->
         <div class="sort">
           <p>Sort by:&nbsp;&nbsp;</p>
+
+          <!-- Sort by category section -->
           <div class="column category">
             <label>
               <input type="radio" v-model="sortCategory" value="Title" @change="sortSubject" />
@@ -55,6 +68,7 @@
             </label>
           </div>
 
+          <!-- Sort by order section -->
           <div class="column order">
             <label>
               <input type="radio" v-model="sortOrder" value="ascending" @change="sortSubject" />
@@ -69,6 +83,7 @@
         </div>
       </div>
 
+      <!-- Products Section -->
       <div class="subject-container" v-if="showProduct">
         <div class="subject-box" v-for="(subject, subjectIndex) in filteredSubjects" :key="subject.id">
           <figure>
@@ -86,7 +101,7 @@
         </div>
       </div>
 
-
+      <!-- Cart page section -->
       <div class="Cart-container" v-else>
         <h3>Welcome to the checkout page</h3>
         <div class="Cart-page">
@@ -103,6 +118,8 @@
           </div>
         </div>
         <hr>
+
+        <!-- Checkout Section -->
         <div class="checkout-container">
           <div class="checkout-box">
             <label for="name">Name:</label>
@@ -115,10 +132,12 @@
           <div class="checkout-box">
             <button id="checkout" :disabled="!isCheckoutEnabled" @click="checkout">Checkout</button>
           </div>
-        </div>        
+        </div>
       </div>
     </main>
   </div>
+
+  <!-- Script that connects javascript -->
   <script src="./javascript/app.js"></script>
 </body>
 
