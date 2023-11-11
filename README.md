@@ -71,8 +71,4 @@ start index.html
 <https://github.com/Dev-Limbachia/LessonsVueJS/>
 
 ### Link to GitHub pages:
-<<<<<<< HEAD
 <https://github.com/Dev-Limbachia/LessonsVueJS/settings/pages>
-=======
-<https://github.com/Dev-Limbachia/LessonsVueJS/settings/pages>
->>>>>>> 0220073d1df480fbfd91a674b04f63d9c71a1b7c
