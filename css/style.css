@@ -110,7 +110,7 @@ h1 {
 /* Cart button */
 .cart {
   position: fixed;
-  right: 20px;
+  right: 5px;
   bottom: 5px;
   background-color: #007bff;
   color: #fff;
