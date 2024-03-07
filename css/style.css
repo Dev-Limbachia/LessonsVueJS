@@ -369,4 +369,19 @@ hr {
       margin-left: 45px;
     }
   }
-  
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .cart {
+    padding: 10px 20px; /* Reduce padding to make the button smaller */
+    font-size: 16px; /* Reduce font size */
+  }
+}
+
+/* Media query for even smaller screens (e.g., mobile) */
+@media only screen and (max-width: 480px) {
+  .cart {
+    padding: 8px 16px; /* Further reduce padding */
+    font-size: 14px; /* Further reduce font size */
+  }
+}
