@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <!-- Scripts -->
 <link rel="stylesheet" href="./css/style.css" />
-<script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script> <!-- Vue JS version 2.7.8 -->
+<script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>
+<!-- Vue JS version 2.7.8 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-<script src="lesson.js"></script> <!-- Script to load JSON data -->
+<script src="lesson.js"></script>
+<!-- Script to load JSON data -->
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>After School Club</title>
+  <link rel="manifest" href="club.webmanifest" />
   <link rel="icon" type="image/x-icon" href="./image/web_icon.ico" />
 </head>
 
 <body>
-
   <!-- Connects Vue JS Framework-->
   <div id="app">
-
     <!-- Header Section -->
     <header>
       <div class="container1">
@@ -37,7 +37,6 @@
     <main>
       <!-- Search and Sort section -->
       <div class="search-sort-container" v-if="showProduct">
-
         <!-- Search section -->
         <div class="search">
           <input class="search-input" type="text" id="searchInput" v-model="searchText" />
@@ -46,8 +45,6 @@
 
         <!-- Sort section -->
         <div class="sort">
-          <p>Sort by:&nbsp;&nbsp;</p>
-
           <!-- Sort by category section -->
           <div class="column category">
             <label>
@@ -59,7 +56,8 @@
               Location
             </label>
             <label>
-              <input type="radio" v-model="sortCategory" id="availabilitysort" value="Availability" @change="sortSubject" />
+              <input type="radio" v-model="sortCategory" id="availabilitysort" value="Availability"
+                @change="sortSubject" />
               Availability
             </label>
             <label>
@@ -78,7 +76,9 @@
               <input type="radio" v-model="sortOrder" id="descending_order" value="descending" @change="sortSubject" />
               Descending
             </label>
-            <button class="button" @click="resetShowProduct">Relevance</button>
+            <button class="button" @click="resetShowProduct">
+              Relevance
+            </button>
           </div>
         </div>
       </div>
@@ -117,20 +117,22 @@
             </button>
           </div>
         </div>
-        <hr>
+        <hr />
 
         <!-- Checkout Section -->
         <div class="checkout-container">
           <div class="checkout-box">
             <label for="name">Name:</label>
-            <input type="text" id="name" v-model="name" @input="checkInputs">
+            <input type="text" id="name" v-model="name" @input="checkInputs" />
           </div>
           <div class="checkout-box">
             <label for="phone">Phone:</label>
-            <input type="text" id="phone" v-model="phone" @input="checkInputs">
+            <input type="text" id="phone" v-model="phone" @input="checkInputs" />
           </div>
           <div class="checkout-box">
-            <button id="checkout" :disabled="!isCheckoutEnabled" @click="checkout">Checkout</button>
+            <button id="checkout" :disabled="!isCheckoutEnabled" @click="checkout">
+              Checkout
+            </button>
           </div>
         </div>
       </div>
