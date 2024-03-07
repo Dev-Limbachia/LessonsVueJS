@@ -138,7 +138,7 @@ h1 {
 .Cart-page {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 20px;
 }
 
@@ -334,3 +334,39 @@ hr {
   color: #999;
   cursor: not-allowed;
 }
+
+  /* Responsive styles */
+  @media only screen and (max-width: 768px) {
+    .subject-box {
+      width: calc(50% - 40px);
+    }
+    
+    .cart-box {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .subject-box {
+      width: calc(100% - 40px);
+    }
+    
+    .cart-box {
+      width: calc(100% - 20px);
+    }
+  }
+  
+  /* Media query for smaller screens */
+  @media only screen and (max-width: 768px) {
+    .search-sort-container {
+      flex-direction: column; /* Change to column layout */
+      align-items: flex-start; /* Align items to the start */
+    }
+  
+    /* Move sort section below search bar */
+    .sort {
+      margin-top: 30px;
+      margin-left: 45px;
+    }
+  }
+  
