@@ -138,7 +138,7 @@ h1 {
 .Cart-page {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 20px;
 }
 
@@ -252,7 +252,7 @@ h1 {
   margin-left: 20px;
 }
 
-/* Cart button */
+/* Cart Page heading */
 .Cart-container h3 {
   margin-top: 2%;
   margin-left: 35%;
@@ -277,9 +277,8 @@ h1 {
 
 /* Style for the label in the checkout box */
 .checkout-box label {
-  width: 100px;
-  text-align: right;
-  margin-right: 10px;
+  width: 60px;
+  margin-right: 5px;
 }
 
 /* Style for the input in the checkout box */
@@ -289,8 +288,8 @@ h1 {
   border: 2px solid #ddd;
   border-radius: 4px;
   padding: 12px;
-  width: 300px;
-  font-size: 18px;
+  width: 280px;
+  font-size: 16px;
   color: #333;
 }
 
@@ -307,6 +306,7 @@ h1 {
   transition: background-color 0.3s;
   font-size: 18px;
   margin-left: 100px;
+  margin-bottom: 50px;
 }
 
 .checkout-box button:hover {
@@ -356,19 +356,22 @@ hr {
     }
   }
   
-  /* Media query for smaller screens */
-  @media only screen and (max-width: 768px) {
-    .search-sort-container {
-      flex-direction: column; /* Change to column layout */
-      align-items: flex-start; /* Align items to the start */
-    }
-  
-    /* Move sort section below search bar */
-    .sort {
-      margin-top: 30px;
-      margin-left: 45px;
-    }
+/* Media query for tablet and mobile screens */
+@media only screen and (max-width: 768px) {
+  .search-sort-container {
+    flex-direction: column; /* Change to column layout */
+    align-items: center; /* Align items to the center horizontally */
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
+    margin-top: 30px;
   }
+
+  /* Adjust margin to center the sort section */
+  .sort {
+    margin-top: 30px; /* Add margin to separate from search bar */
+    margin-left: 0; /* Reset left margin to center horizontally */
+  }
+}
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 768px) {
@@ -383,5 +386,23 @@ hr {
   .cart {
     padding: 8px 16px; /* Further reduce padding */
     font-size: 14px; /* Further reduce font size */
+  }
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .Cart-container h3 {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 20px; /* Reduce font size */
+  }
+}
+
+/* Media query for even smaller screens (e.g., mobile) */
+@media only screen and (max-width: 480px) {
+  .Cart-container h3 {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 20px; /* Further reduce font size */
   }
 }
